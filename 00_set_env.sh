@@ -27,4 +27,7 @@ export NAT_NAME="learn-gcp-kou-gke-nat"
 # Enable required services
 gcloud services enable compute.googleapis.com container.googleapis.com
 
+# Install gke-gcloud-auth-plugin
+gcloud components install gke-gcloud-auth-plugin
+
 export INIT_COMPLETED=true
