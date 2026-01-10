@@ -19,3 +19,6 @@ gcloud compute networks subnets create "$SUBNET_NAME" \
 gcloud compute networks subnets update "$SUBNET_NAME" \
   --region="$REGION" \
   --enable-private-ip-google-access
+
+# If not need ssh to nodes, firewall rules can be omitted
+# (TBD)
