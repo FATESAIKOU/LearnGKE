@@ -20,6 +20,10 @@ export SVC_SECONDARY_CIDR="10.32.0.0/16"
 # Control plane CIDR (must be /28 for private cluster control plane range)
 export MASTER_CIDR="10.255.0.0/28"
 
+# NAT / Router names
+export ROUTER_NAME="learn-gcp-kou-gke-router"
+export NAT_NAME="learn-gcp-kou-gke-nat"
+
 # Enable required services
 gcloud services enable compute.googleapis.com container.googleapis.com
 
