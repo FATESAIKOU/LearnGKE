@@ -13,19 +13,19 @@
 ### Phase 1: 基礎框架建立
 | 步驟 | 項目 | 說明 | 狀態 |
 |------|------|------|------|
-| B1-1 | 建立 Rails API 專案 | rails new --api | ⬜ 未開始 |
-| B1-2 | 設定 RuboCop | 依據 coding rule 設定 linter | ⬜ 未開始 |
-| B1-3 | 設定資料庫連線 | database.yml 設定 MySQL | ⬜ 未開始 |
-| B1-4 | 測試基礎啟動 | 確認 Rails server 可正常運作 | ⬜ 未開始 |
+| B1-1 | 建立 Rails API 專案 | rails new --api | ✅ 完成 |
+| B1-2 | 設定 RuboCop | 依據 coding rule 設定 linter | ✅ 完成 |
+| B1-3 | 設定資料庫連線 | database.yml 設定 MySQL | ✅ 完成 |
+| B1-4 | 測試基礎啟動 | 確認 Rails server 可正常運作 | ✅ 完成 |
 
 ### Phase 2: 資料模型建立
 | 步驟 | 項目 | 說明 | 狀態 |
 |------|------|------|------|
-| B2-1 | 建立 Todo Model | 含 title, description, completed | ⬜ 未開始 |
-| B2-2 | 建立 Migration | 建立 todos 資料表 | ⬜ 未開始 |
-| B2-3 | 加入 Validation | title 必填驗證 | ⬜ 未開始 |
-| B2-4 | 執行 Migration | 建立資料表 | ⬜ 未開始 |
-| B2-5 | 測試 Model | 驗證 Model 運作正常 | ⬜ 未開始 |
+| B2-1 | 建立 Todo Model | 含 title, description, completed | ✅ 完成 |
+| B2-2 | 建立 Migration | 建立 todos 資料表 | ✅ 完成 |
+| B2-3 | 加入 Validation | title 必填驗證 | ✅ 完成 |
+| B2-4 | 執行 Migration | 建立資料表 | ✅ 完成 |
+| B2-5 | 測試 Model | 驗證 Model 運作正常 | ✅ 完成 |
 
 ### Phase 3: API Controller 基礎
 | 步驟 | 項目 | 說明 | 狀態 |
