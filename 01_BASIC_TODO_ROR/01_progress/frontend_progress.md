@@ -1,0 +1,115 @@
+# Frontend 實現進度管理
+
+## 技術棧
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **HTTP Client**: fetch API
+
+---
+
+## 實現步驟規劃
+
+### Phase 1: 基礎框架建立
+| 步驟 | 項目 | 說明 | 狀態 |
+|------|------|------|------|
+| F1-1 | 建立 Next.js 專案 | 使用 create-next-app 建立專案雛形 | ⬜ 未開始 |
+| F1-2 | 設定專案結構 | 建立 components, lib, types 目錄 | ⬜ 未開始 |
+| F1-3 | 測試基礎啟動 | 確認 Next.js dev server 可正常運作 | ⬜ 未開始 |
+
+### Phase 2: API 連接層
+| 步驟 | 項目 | 說明 | 狀態 |
+|------|------|------|------|
+| F2-1 | 定義 TypeScript 型別 | 建立 Todo interface | ⬜ 未開始 |
+| F2-2 | 建立 API Client | 封裝 fetch 呼叫後端 API | ⬜ 未開始 |
+| F2-3 | 測試 API 連接 | 使用 mock 或實際後端測試 | ⬜ 未開始 |
+
+### Phase 3: 列表頁面 (List/Search)
+| 步驟 | 項目 | 說明 | 狀態 |
+|------|------|------|------|
+| F3-1 | 建立列表頁面 | app/page.tsx 顯示 Todo 列表 | ⬜ 未開始 |
+| F3-2 | 建立 TodoItem 元件 | 單一 Todo 項目顯示元件 | ⬜ 未開始 |
+| F3-3 | 實作搜尋功能 | 搜尋框與過濾邏輯 | ⬜ 未開始 |
+| F3-4 | 測試列表功能 | 確認列表顯示與搜尋正常 | ⬜ 未開始 |
+
+### Phase 4: 詳情頁面 (Show)
+| 步驟 | 項目 | 說明 | 狀態 |
+|------|------|------|------|
+| F4-1 | 建立詳情頁面 | app/todos/[id]/page.tsx | ⬜ 未開始 |
+| F4-2 | 測試詳情頁面 | 確認可正確顯示單一 Todo | ⬜ 未開始 |
+
+### Phase 5: 新增功能 (Create)
+| 步驟 | 項目 | 說明 | 狀態 |
+|------|------|------|------|
+| F5-1 | 建立新增頁面 | app/todos/new/page.tsx | ⬜ 未開始 |
+| F5-2 | 建立表單元件 | TodoForm 元件（可重用於編輯） | ⬜ 未開始 |
+| F5-3 | 實作表單驗證 | 標題必填驗證 | ⬜ 未開始 |
+| F5-4 | 測試新增功能 | 確認可成功新增 Todo | ⬜ 未開始 |
+
+### Phase 6: 編輯功能 (Update)
+| 步驟 | 項目 | 說明 | 狀態 |
+|------|------|------|------|
+| F6-1 | 建立編輯頁面 | app/todos/[id]/edit/page.tsx | ⬜ 未開始 |
+| F6-2 | 重用 TodoForm 元件 | 傳入現有資料進行編輯 | ⬜ 未開始 |
+| F6-3 | 測試編輯功能 | 確認可成功更新 Todo | ⬜ 未開始 |
+
+### Phase 7: 刪除功能 (Delete)
+| 步驟 | 項目 | 說明 | 狀態 |
+|------|------|------|------|
+| F7-1 | 實作刪除按鈕 | 在列表/詳情頁加入刪除按鈕 | ⬜ 未開始 |
+| F7-2 | 實作確認對話框 | 刪除前確認 | ⬜ 未開始 |
+| F7-3 | 測試刪除功能 | 確認可成功刪除 Todo | ⬜ 未開始 |
+
+### Phase 8: 完成狀態切換 (Toggle Complete)
+| 步驟 | 項目 | 說明 | 狀態 |
+|------|------|------|------|
+| F8-1 | 實作 Checkbox | 在 TodoItem 加入完成狀態切換 | ⬜ 未開始 |
+| F8-2 | 測試切換功能 | 確認可即時切換完成狀態 | ⬜ 未開始 |
+
+### Phase 9: Docker 化
+| 步驟 | 項目 | 說明 | 狀態 |
+|------|------|------|------|
+| F9-1 | 建立 Dockerfile | Frontend Dockerfile | ⬜ 未開始 |
+| F9-2 | 測試容器啟動 | 確認容器內可正常運作 | ⬜ 未開始 |
+
+---
+
+## 專案結構規劃
+
+```
+frontend/
+├── app/
+│   ├── layout.tsx          # 共用 Layout
+│   ├── page.tsx            # 首頁（列表頁）
+│   ├── globals.css         # 全域樣式
+│   └── todos/
+│       ├── new/
+│       │   └── page.tsx    # 新增頁面
+│       └── [id]/
+│           ├── page.tsx    # 詳情頁面
+│           └── edit/
+│               └── page.tsx # 編輯頁面
+├── components/
+│   ├── TodoItem.tsx        # Todo 項目元件
+│   ├── TodoForm.tsx        # Todo 表單元件
+│   ├── TodoList.tsx        # Todo 列表元件
+│   ├── SearchBar.tsx       # 搜尋框元件
+│   └── ConfirmDialog.tsx   # 確認對話框
+├── lib/
+│   └── api.ts              # API Client
+├── types/
+│   └── todo.ts             # TypeScript 型別定義
+├── Dockerfile
+├── package.json
+├── tsconfig.json
+├── tailwind.config.ts
+└── next.config.ts
+```
+
+---
+
+## 變更記錄
+
+| 日期 | 變更內容 |
+|------|----------|
+| 2026-01-11 | 初始規劃建立 |
