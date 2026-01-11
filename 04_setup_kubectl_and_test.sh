@@ -5,5 +5,7 @@ if [ -z "$INIT_COMPLETED" ]; then
   exit 1
 fi
 
+gcloud container clusters get-credentials "$CLUSTER_NAME" --zone "$ZONE"
+
 kubectl get nodes -o wide
 kubectl get pods -A
