@@ -9,7 +9,10 @@ module Api
       # GET /api/v1/todos
       # GET /api/v1/todos?q=keyword
       def index
-        @todos = Todo.search(params[:q]).ordered
+        @todos = Todo.all
+        @todos = @todos.search(params[:q]) if params[:q].present?
+        @todos = @todos.ordered
+
         render json: { todos: @todos }
       end
 
