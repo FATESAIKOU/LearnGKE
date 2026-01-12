@@ -30,10 +30,10 @@
 ### Phase 3: API Controller 基礎
 | 步驟 | 項目 | 說明 | 狀態 |
 |------|------|------|------|
-| B3-1 | 設定 API 路由 | /api/v1/todos | ⬜ 未開始 |
-| B3-2 | 建立 TodosController | 空的 Controller 骨架 | ⬜ 未開始 |
-| B3-3 | 設定錯誤處理 | 統一錯誤回應格式 | ⬜ 未開始 |
-| B3-4 | 測試路由設定 | 確認路由正確 | ⬜ 未開始 |
+| B3-1 | 設定 API 路由 | /api/v1/todos | ✅ 完成 |
+| B3-2 | 建立 TodosController | 空的 Controller 骨架 | ✅ 完成 |
+| B3-3 | 設定錯誤處理 | 統一錯誤回應格式 | ✅ 完成 |
+| B3-4 | 測試路由設定 | 確認路由正確 | ✅ 完成 |
 
 ### Phase 4: 列表 API (GET /todos)
 | 步驟 | 項目 | 說明 | 狀態 |
