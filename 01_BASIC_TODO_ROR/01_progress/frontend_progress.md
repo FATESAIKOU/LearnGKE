@@ -13,26 +13,26 @@
 ### Phase 1: 基礎框架建立
 | 步驟 | 項目 | 說明 | 狀態 |
 |------|------|------|------|
-| F1-1 | 建立 Next.js 專案 | 使用 create-next-app 建立專案雛形 | ⬜ 未開始 |
-| F1-2 | 設定 ESLint | 依據 coding rule 設定 linter（禁止 use client 呼叫 API） | ⬜ 未開始 |
-| F1-3 | 設定專案結構 | 建立 components, lib, types 目錄 | ⬜ 未開始 |
-| F1-4 | 測試基礎啟動 | 確認 Next.js dev server 可正常運作 | ⬜ 未開始 |
+| F1-1 | 建立 Next.js 專案 | 使用 create-next-app 建立專案雛形 | ✅ 完成 |
+| F1-2 | 設定 ESLint | 依據 coding rule 設定 linter（禁止 use client 呼叫 API） | ✅ 完成 |
+| F1-3 | 設定專案結構 | 建立 components, lib, types 目錄 | ✅ 完成 |
+| F1-4 | 測試基礎啟動 | 確認 Next.js dev server 可正常運作 | ✅ 完成 |
 
 ### Phase 2: API 連接層
 | 步驟 | 項目 | 說明 | 狀態 |
 |------|------|------|------|
-| F2-1 | 定義 TypeScript 型別 | 建立 Todo interface | ⬜ 未開始 |
-| F2-2 | 建立 API Client | 封裝 fetch 呼叫後端 API | ⬜ 未開始 |
-| F2-3 | 測試 API 連接 | 使用 mock 或實際後端測試 | ⬜ 未開始 |
+| F2-1 | 定義 TypeScript 型別 | 建立 Todo interface | ✅ 完成 |
+| F2-2 | 建立 API Client | 封裝 fetch 呼叫後端 API | ✅ 完成 |
+| F2-3 | 測試 API 連接 | 使用 mock 或實際後端測試 | ✅ 完成 |
 
 ### Phase 3: 列表頁面 (List/Search)
 | 步驟 | 項目 | 說明 | 狀態 |
 |------|------|------|------|
-| F3-1 | 建立列表頁面 | app/page.tsx 顯示 Todo 列表 | ⬜ 未開始 |
-| F3-2 | 建立 TodoItem 元件 | 單一 Todo 項目顯示元件 | ⬜ 未開始 |
-| F3-3 | 實作搜尋功能 | 搜尋框與過濾邏輯 | ⬜ 未開始 |
-| F3-4 | 執行 ESLint | 檢查程式碼風格 | ⬜ 未開始 |
-| F3-5 | 測試列表功能 | 確認列表顯示與搜尋正常 | ⬜ 未開始 |
+| F3-1 | 建立列表頁面 | app/page.tsx 顯示 Todo 列表 | ✅ 完成 |
+| F3-2 | 建立 TodoItem 元件 | 單一 Todo 項目顯示元件 | ✅ 完成 |
+| F3-3 | 實作搜尋功能 | 搜尋框與過濾邏輯 | ✅ 完成 |
+| F3-4 | 執行 ESLint | 檢查程式碼風格 | ✅ 完成 |
+| F3-5 | 測試列表功能 | 確認列表顯示與搜尋正常 | ✅ 完成 |
 
 ### Phase 4: 詳情頁面 (Show)
 | 步驟 | 項目 | 說明 | 狀態 |

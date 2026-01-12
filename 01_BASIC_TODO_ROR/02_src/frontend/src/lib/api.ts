@@ -6,8 +6,10 @@ import {
   UpdateTodoInput,
 } from '@/types/todo';
 
-// API base URL - use internal Docker network URL for server-side calls
-const API_BASE_URL = process.env.INTERNAL_API_URL || 'http://backend:3001/api/v1';
+// API base URL
+// In production (Docker): use internal network URL
+// In development (local): use localhost
+const API_BASE_URL = process.env.INTERNAL_API_URL || 'http://localhost:3001/api/v1';
 
 /**
  * Fetch all todos with optional search query
