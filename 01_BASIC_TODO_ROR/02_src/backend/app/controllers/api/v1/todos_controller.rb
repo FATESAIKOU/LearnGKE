@@ -18,7 +18,7 @@ module Api
 
       # GET /api/v1/todos/:id
       def show
-        # TODO: 實作單一項目顯示
+        render json: { todo: @todo }
       end
 
       # POST /api/v1/todos
