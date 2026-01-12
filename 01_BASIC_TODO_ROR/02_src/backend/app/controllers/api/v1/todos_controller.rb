@@ -23,7 +23,18 @@ module Api
 
       # POST /api/v1/todos
       def create
-        # TODO: 實作新增功能
+        @todo = Todo.new(todo_params)
+
+        if @todo.save
+          render json: { todo: @todo }, status: :created
+        else
+          render json: {
+            error: {
+              code: "VALIDATION_ERROR",
+              message: @todo.errors.full_messages.join(", ")
+            }
+          }, status: :unprocessable_entity
+        end
       end
 
       # PATCH/PUT /api/v1/todos/:id

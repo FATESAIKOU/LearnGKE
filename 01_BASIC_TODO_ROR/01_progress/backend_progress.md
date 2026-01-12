@@ -54,11 +54,11 @@
 ### Phase 6: 新增 API (POST /todos)
 | 步驟 | 項目 | 說明 | 狀態 |
 |------|------|------|------|
-| B6-1 | 實作 create action | 新增 Todo | ⬜ 未開始 |
-| B6-2 | 實作 Strong Parameters | 白名單參數過濾 | ⬜ 未開始 |
-| B6-3 | 處理驗證錯誤 | 回傳 422 錯誤 | ⬜ 未開始 |
-| B6-4 | 執行 RuboCop | 檢查程式碼風格 | ⬜ 未開始 |
-| B6-5 | 測試新增 API | curl 或 RSpec 測試 | ⬜ 未開始 |
+| B6-1 | 實作 create action | 新增 Todo | ✅ 完成 |
+| B6-2 | 實作 Strong Parameters | 白名單參數過濾 | ✅ 完成 |
+| B6-3 | 處理驗證錯誤 | 回傳 422 錯誤 | ✅ 完成 |
+| B6-4 | 執行 RuboCop | 檢查程式碼風格 | ✅ 完成 |
+| B6-5 | 測試新增 API | curl 或 RSpec 測試 | ✅ 完成 |
 
 ### Phase 7: 更新 API (PATCH /todos/:id)
 | 步驟 | 項目 | 說明 | 狀態 |
