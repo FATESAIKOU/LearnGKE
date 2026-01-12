@@ -53,7 +53,8 @@ module Api
 
       # DELETE /api/v1/todos/:id
       def destroy
-        # TODO: 實作刪除功能
+        @todo.destroy
+        head :no_content
       end
 
       private

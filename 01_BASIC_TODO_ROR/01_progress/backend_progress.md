@@ -71,10 +71,10 @@
 ### Phase 8: 刪除 API (DELETE /todos/:id)
 | 步驟 | 項目 | 說明 | 狀態 |
 |------|------|------|------|
-| B8-1 | 實作 destroy action | 刪除 Todo | ⬜ 未開始 |
-| B8-2 | 處理 404 錯誤 | 找不到時回傳錯誤 | ⬜ 未開始 |
-| B8-3 | 執行 RuboCop | 檢查程式碼風格 | ⬜ 未開始 |
-| B8-4 | 測試刪除 API | curl 或 RSpec 測試 | ⬜ 未開始 |
+| B8-1 | 實作 destroy action | 刪除 Todo | ✅ 完成 |
+| B8-2 | 處理 404 錯誤 | 找不到時回傳錯誤 | ✅ 完成 |
+| B8-3 | 執行 RuboCop | 檢查程式碼風格 | ✅ 完成 |
+| B8-4 | 測試刪除 API | curl 或 RSpec 測試 | ✅ 完成 |
 
 ### Phase 9: Docker 化
 | 步驟 | 項目 | 說明 | 狀態 |
