@@ -39,7 +39,16 @@ module Api
 
       # PATCH/PUT /api/v1/todos/:id
       def update
-        # TODO: 實作更新功能
+        if @todo.update(todo_params)
+          render json: { todo: @todo }
+        else
+          render json: {
+            error: {
+              code: "VALIDATION_ERROR",
+              message: @todo.errors.full_messages.join(", ")
+            }
+          }, status: :unprocessable_entity
+        end
       end
 
       # DELETE /api/v1/todos/:id

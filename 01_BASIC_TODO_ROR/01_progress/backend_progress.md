@@ -63,10 +63,10 @@
 ### Phase 7: 更新 API (PATCH /todos/:id)
 | 步驟 | 項目 | 說明 | 狀態 |
 |------|------|------|------|
-| B7-1 | 實作 update action | 更新 Todo | ⬜ 未開始 |
-| B7-2 | 處理 404/422 錯誤 | 找不到或驗證失敗 | ⬜ 未開始 |
-| B7-3 | 執行 RuboCop | 檢查程式碼風格 | ⬜ 未開始 |
-| B7-4 | 測試更新 API | curl 或 RSpec 測試 | ⬜ 未開始 |
+| B7-1 | 實作 update action | 更新 Todo | ✅ 完成 |
+| B7-2 | 處理 404/422 錯誤 | 找不到或驗證失敗 | ✅ 完成 |
+| B7-3 | 執行 RuboCop | 檢查程式碼風格 | ✅ 完成 |
+| B7-4 | 測試更新 API | curl 或 RSpec 測試 | ✅ 完成 |
 
 ### Phase 8: 刪除 API (DELETE /todos/:id)
 | 步驟 | 項目 | 說明 | 狀態 |
