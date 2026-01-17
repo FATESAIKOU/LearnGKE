@@ -2,7 +2,7 @@
 
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
-import { createTodo, updateTodo } from '@/lib/api';
+import { createTodo, updateTodo, deleteTodo } from '@/lib/api';
 
 export interface ActionState {
   success: boolean;
@@ -73,4 +73,18 @@ export async function updateTodoAction(
   revalidatePath('/');
   revalidatePath(`/todos/${id}`);
   redirect(`/todos/${id}`);
+}
+
+export async function deleteTodoAction(id: number): Promise<ActionState> {
+  try {
+    await deleteTodo(id);
+  } catch (e) {
+    return { 
+      success: false, 
+      error: e instanceof Error ? e.message : '刪除失敗' 
+    };
+  }
+
+  revalidatePath('/');
+  redirect('/');
 }

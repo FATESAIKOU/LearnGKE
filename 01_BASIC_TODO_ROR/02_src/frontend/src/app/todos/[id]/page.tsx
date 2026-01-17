@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { fetchTodo } from '@/lib/api';
+import { DeleteTodoButton } from '@/components/DeleteTodoButton';
 
 interface TodoDetailPageProps {
   params: Promise<{ id: string }>;
@@ -42,6 +43,7 @@ export default async function TodoDetailPage({ params }: TodoDetailPageProps) {
               >
                 ✏️ 編輯
               </Link>
+              <DeleteTodoButton todoId={todo.id} todoTitle={todo.title} />
             </div>
           </div>
         </header>

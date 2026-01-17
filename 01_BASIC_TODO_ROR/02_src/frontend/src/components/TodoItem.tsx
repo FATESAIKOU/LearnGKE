@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Todo } from '@/types/todo';
+import { DeleteTodoButton } from '@/components/DeleteTodoButton';
 
 interface TodoItemProps {
   todo: Todo;
@@ -37,6 +38,9 @@ export function TodoItem({ todo }: TodoItemProps) {
               {todo.completed ? '✓ 已完成' : '○ 進行中'}
             </span>
           </div>
+        </div>
+        <div className="ml-4 flex-shrink-0">
+          <DeleteTodoButton todoId={todo.id} todoTitle={todo.title} />
         </div>
       </div>
     </div>
