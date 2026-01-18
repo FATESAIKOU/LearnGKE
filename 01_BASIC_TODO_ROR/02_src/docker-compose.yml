@@ -1,0 +1,52 @@
+services:
+  # MySQL Database
+  db:
+    image: mysql:8.0
+    container_name: todo_db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: backend_development
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Rails Backend API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: todo_backend
+    environment:
+      RAILS_ENV: development
+      RAILS_MASTER_KEY: d8d3f2c57a1e30d0d41bc2c11c4fe52a
+      DATABASE_URL: mysql2://root:rootpassword@db:3306/backend_development
+    ports:
+      - "3001:3001"
+    depends_on:
+      db:
+        condition: service_healthy
+    command: >
+      sh -c "bin/rails db:prepare && bin/rails server -b 0.0.0.0 -p 3001"
+
+  # Next.js Frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: todo_frontend
+    environment:
+      NODE_ENV: production
+      INTERNAL_API_URL: http://backend:3001/api/v1
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  mysql_data:

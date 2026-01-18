@@ -1,0 +1,32 @@
+# Omakase Ruby styling for Rails
+inherit_gem: { rubocop-rails-omakase: rubocop.yml }
+
+# Overwrite or add rules to create your own house style
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'db/schema.rb'
+    - 'db/migrate/**/*'
+    - 'bin/**/*'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+
+# Naming conventions
+Naming/MethodName:
+  Enabled: true
+  EnforcedStyle: snake_case
+
+Naming/VariableName:
+  Enabled: true
+  EnforcedStyle: snake_case
+
+# Controller rules - keep controllers thin
+Metrics/MethodLength:
+  Max: 15
+  Exclude:
+    - 'spec/**/*'
+
+# Documentation
+Style/Documentation:
+  Enabled: false
