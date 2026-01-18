@@ -88,3 +88,21 @@ export async function deleteTodoAction(id: number): Promise<ActionState> {
   revalidatePath('/');
   redirect('/');
 }
+
+export async function toggleTodoAction(
+  id: number,
+  completed: boolean
+): Promise<ActionState> {
+  try {
+    await updateTodo(id, { completed });
+  } catch (e) {
+    return { 
+      success: false, 
+      error: e instanceof Error ? e.message : '更新失敗' 
+    };
+  }
+
+  revalidatePath('/');
+  revalidatePath(`/todos/${id}`);
+  return { success: true };
+}

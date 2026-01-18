@@ -60,7 +60,9 @@ export default async function TodoDetailPage({ params }: TodoDetailPageProps) {
               </span>
             </div>
 
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            <h2 className={`text-2xl font-bold mb-4 ${
+              todo.completed ? 'text-gray-500 line-through' : 'text-gray-900'
+            }`}>
               {todo.title}
             </h2>
 
