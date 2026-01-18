@@ -1,19 +1,45 @@
-FROM node:22-alpine
-
-# Set working directory
+# Stage 1: Dependencies
+FROM node:22-alpine AS deps
 WORKDIR /app
 
-# Copy package files first for caching
-COPY package*.json ./
-
 # Install dependencies
-RUN npm install
+COPY package.json package-lock.json ./
+RUN npm ci
 
-# Copy application code
+# Stage 2: Builder
+FROM node:22-alpine AS builder
+WORKDIR /app
+
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Expose port
+# Build-time environment variable for API URL
+ARG NEXT_PUBLIC_API_BASE_URL=http://backend:3000
+ENV NEXT_PUBLIC_API_BASE_URL=${NEXT_PUBLIC_API_BASE_URL}
+
+# Build the application
+RUN npm run build
+
+# Stage 3: Runner
+FROM node:22-alpine AS runner
+WORKDIR /app
+
+ENV NODE_ENV=production
+
+# Create non-root user
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
+
+# Copy built assets
+COPY --from=builder /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+
+USER nextjs
+
 EXPOSE 3000
 
-# Default command
-CMD ["npm", "run", "dev"]
+ENV PORT=3000
+ENV HOSTNAME="0.0.0.0"
+
+CMD ["node", "server.js"]
